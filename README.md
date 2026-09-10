@@ -10,8 +10,10 @@ This project uses a dataset called waze_dataset.csv. It contains synthetic data 
 In connection to this, new features was engineered. Multiple redundant columns were dropped and encoded into the proper data type.  
 
 ## Modeling and Evaluation 
-A random forest model comprising 75 decision trees was used to determine feature importance in video classification as a claim or not. The below plot shows that video views, likes, and downloads were the Top 3 most important factors in determining a claim video. The overall model performed with same scores after testing, nearly 100% accuracy and 99% recall. <br> <br>
-<img width="777" height="879" alt="image" src="https://github.com/user-attachments/assets/c5298422-362b-431e-b4d8-5bdb7f3b66b7" />
+An XGBoost model comprising 200 decision trees was used to determine feature importance in user classification as a churned or not. The below plot shows that number of days after onbarding, km driven per hour and total navigations to the favorite place were the top 3 most important factors in determining a churn status. The overall model performance after testing was  80% accuracy and 24.4% f1-score. <br> <br>
+<img width="1146" height="664" alt="Screenshot from 2026-09-10 19-45-13" src="https://github.com/user-attachments/assets/7039272f-e3e1-418f-996e-a7826f936238" />
+
+
 
 ## Conclusion
-it is highly recommended to start using the model in a trial because it shows good measures and any helpful feedback would be of high benefit for further improvement. Getting the number of reports done by users on each claim classified video could be very useful where we can arrange claim videos by number of reports in descending order and review them manually. 
+It is not recommended to use the current model for churn prediction, because it yielded many false negative errors where it indicated users who will churn as retained. However, the model will be of huge benefit for guiding future exploratory analysis efforts. Furthermore, data could be joined that need to balance the classes in the target variable to revel more about churn customer behavior. Also more feature engineering could be done since it is one of the easiest and fastest ways to improve model performance.
